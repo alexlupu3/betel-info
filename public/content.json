@@ -1,0 +1,169 @@
+{
+  "items": [
+    {
+      "type": "group",
+      "title": "Evenimente",
+      "items": [
+        {
+          "type": "card",
+          "title": "Lanț de post și rugăciune - Postul Mărturiei",
+          "thumbnail": "https://images.zaap.ai/public/92f64fce0dfd7a68a3ac4bcf498e871491fe62e4fc1086647649.webp",
+          "description": "Mijlocim pentru evenimentul ”Liber”, din 1 martie.",
+          "link": "https://docs.google.com/spreadsheets/d/1KLCkY-QOIeJg3qycr5Ffe7rPcT9BED2ID-s1bc8dLEk/edit?usp=sharing",
+          "cta": "Mă înscriu"
+        },
+        {
+          "type": "card",
+          "title": "25 Feb // BC - Cină în familie",
+          "thumbnail": "https://images.zaap.ai/public/4da9d6de6b08ba90f70a4f204cb9bd1a84082d186de8a2a5c6a7.png",
+          "description": "Cină cu familiile din Betel Centru",
+          "date": "2026-02-25",
+          "link": "https://forms.gle/oQ3pcXm9eqR3gysn6",
+          "cta": "Mă înscriu"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "content": "## PROGRAMUL BISERICII BETEL\n\n**În fiecare duminică:**\n- **Betel Centru** – ora 10:00\n- **Betel Vest** – ora 10:00\n- **Betel Mănăștur** – ora 09:00, 11:00 & 18:00\n- **Cursul de Cateheză „O nouă viață”** – ora 17:00\n\n**În timpul săptămânii:**\n- **Întâlnire de Rugăciune** – Luni, ora 18:00\n- **Studiu Biblic** – Joi, ora 18:00\n- **El-Betel** – Vineri, ora 19:00\n- **Rugăciune și Închinare** – Vineri, ora 22:00"
+    },
+    {
+      "type": "group",
+      "title": "Contactează-ne!",
+      "items": [
+        {
+          "type": "card",
+          "title": "Cursul “O nouă viață”",
+          "thumbnail": "https://images.zaap.ai/public/43003d652c1d3111ee304c9140f083be88a973937280b06cb8bb.webp",
+          "description": "Participă la întâlnirile de cateheză, în fiecare duminică de la ora 17:00.",
+          "link": "https://forms.gle/qiqu8vfWPG1EBr8K6",
+          "cta": "Înscrie-te"
+        },
+        {
+          "type": "card",
+          "title": "Doresc mai multe informații",
+          "thumbnail": "https://images.zaap.ai/public/a3df648e1b5d82f7e50a40c941d49ea6ad1b1dbef8269d58f965.png",
+          "description": "Biserica Betel răspunde cu drag nevoilor tale!",
+          "link": "https://forms.gle/6aSBQmwt4Eaxgo4U7",
+          "cta": "Spre formular"
+        },
+        {
+          "type": "card",
+          "title": "Doresc să slujesc",
+          "thumbnail": "https://images.zaap.ai/public/a3df648e1b5d82f7e50a40c941d49ea6ad1b1dbef8269d58f965.png",
+          "description": "Pune în valoare darul pe care Dumnezeu l-a așezat în tine",
+          "link": "https://forms.gle/DVEdQBcT6HmomSbc9",
+          "cta": "Spre formular"
+        },
+        {
+          "type": "card",
+          "title": "Grupuri de casă",
+          "thumbnail": "https://images.zaap.ai/public/a3df648e1b5d82f7e50a40c941d49ea6ad1b1dbef8269d58f965.png",
+          "description": "Te invităm să fii parte a unui grup de casă!",
+          "link": "https://forms.gle/YJc8ykow915RqT5CA",
+          "cta": "Înscrie-te"
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "title": "VINO ȘI VEZI 2026",
+      "thumbnail": "https://images.zaap.ai/public/521ab92e7792ca0553c34c3049d7a416a1d687b4c9530d07669e.webp",
+      "description": "Fii parte activă într-o experiență de neuitat!",
+      "link": "https://vinosivezi.ro/",
+      "cta": "Află mai multe"
+    },
+    {
+      "type": "card",
+      "title": "Betel Vest: Construim inima comunității!",
+      "thumbnail": "https://uploads-ssl.webflow.com/6415bf7a7e0af5a12af3f683/6415ff1f507092cdd692a320_IMGFrame%2017.png",
+      "description": "Fii unul dintre cei 3125! Dăruiește 100 RON lunar timp de un an.",
+      "link": "https://www.inimacomunitatii.ro",
+      "cta": "Dăruiește"
+    },
+    {
+      "type": "group",
+      "title": "Lucrările Bisericii Betel",
+      "items": [
+        {
+          "type": "card",
+          "title": "Corul Joy",
+          "thumbnail": "https://images.zaap.ai/public/c06ea2c3e9666833130b4ea24d99b1cb8c51184e1e5fdd1acf46.webp",
+          "description": "Ne reluăm activitatea",
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLScfCZS8z2Zc2GhmmeOMiPhywmkyHuU7Oc2tcDaMRRWzE0cNJA/viewform",
+          "cta": "Înscriere"
+        },
+        {
+          "type": "card",
+          "title": "Alpha",
+          "thumbnail": "https://images.zaap.ai/public/5c727727576ff70e7a3a41634e78b24b9dae37dabaf67620ad7a.png",
+          "description": "Ai întrebări despre viață și despre Dumnezeu?",
+          "link": "https://tryalpha.ro",
+          "cta": "Află mai multe"
+        },
+        {
+          "type": "card",
+          "title": "Misiune Urbană",
+          "thumbnail": "https://imagedelivery.net/tqC70bVt8T6GtQUXNsa2-g/5fc68e46-34a6-4951-f988-55873f75ff00/public",
+          "description": "Îl iubim pe Dumnezeu și pe oameni: propovăduim Evanghelia și facem ucenici pentru Hristos",
+          "link": "https://instagram.com/cautat.de.dumnezeu?igshid=YmMyMTA2M2Y=",
+          "cta": "Află mai multe"
+        },
+        {
+          "type": "card",
+          "title": "Betel Production",
+          "thumbnail": "https://images.zaap.ai/public/0c7d904d5e85c660543b44a645eaacf4bdb04eb6c3476d751c25.png",
+          "description": "Fii parte din echipă",
+          "link": "https://forms.gle/M96gYzDNATrdvCVK9",
+          "cta": "Aplică Acum"
+        },
+        {
+          "type": "card",
+          "title": "Cantina Socială",
+          "thumbnail": "https://imagedelivery.net/tqC70bVt8T6GtQUXNsa2-g/e81dec36-aab9-4a2a-0ccd-7f57fc9b7c00/public",
+          "description": "Află mai multe sau implică-te și tu!",
+          "link": "https://docs.google.com/presentation/d/e/2PACX-1vSmbIIdP3IrcEgUpiJtEjEiLqWBdMR-rQ2sDMsq6AR9i1oGs_M7f-tTQA1AwLzWNP0sJkMSSaTUDPQS/pub",
+          "cta": "Află mai multe"
+        },
+        {
+          "type": "card",
+          "title": "New Mom",
+          "thumbnail": "https://imagedelivery.net/tqC70bVt8T6GtQUXNsa2-g/6198a78d-7a96-4556-1045-b88ecbe56d00/public",
+          "description": "Mâncare caldă pentru mămici",
+          "link": "https://forms.gle/VjKi3uhypx1o5KjHA",
+          "cta": "Află mai multe"
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "title": "Newsletter",
+      "thumbnail": "https://images.zaap.ai/public/cdd0dc057659aae2526f4bb34bc281b1866d705c0cf0e1eaad2c.png",
+      "description": "Rămâi la curent cu activitățile bisericii Betel!",
+      "link": "https://725a3658.sibforms.com/serve/MUIFAKUYDE2_OVDOKRD_dQU3NUvDsLLwDZxSh2WUpXjfLC8_5WBs5B0__nqVGgalUBRE6WHBuU2AwTnqOjxk7eQB5Y2DwPVNh_mNPEtVMAb60h0KrddS3wwOhIeD_DVlvhhbyN46VXjalyVLolSbwOplg3fs2mGYPL46cS_BV_o9DaET-IPpBIsnhcY9EpberT0hSonzinAeKo48",
+      "cta": "Abonează-te"
+    },
+    {
+      "type": "card",
+      "title": "🔗 Formularul 230",
+      "description": "Redirectionează 3,5% din impozitul pe profit către Biserica Baptista nr. 5 Betel folosind acest link.",
+      "link": "https://formular230.ro/biserica-baptista-nr-5-betel"
+    },
+    {
+      "type": "card",
+      "title": "Donează",
+      "thumbnail": "https://images.zaap.ai/public/a3df648e1b5d82f7e50a40c941d49ea6ad1b1dbef8269d58f965.png",
+      "description": "Dăruiește acolo unde ești îndemnat",
+      "link": "https://www.bisericabetel.com/#donate",
+      "cta": "Donează"
+    },
+    {
+      "type": "card",
+      "title": "Ascultă",
+      "thumbnail": "https://imagedelivery.net/tqC70bVt8T6GtQUXNsa2-g/cc57a8ce-5bce-4aea-5ddb-0b36ce3fb900/public",
+      "description": "Ascultă ultimele cântări Betel Worship pe platforma ta preferată",
+      "link": "https://linktr.ee/betelworship",
+      "cta": "Descoperă"
+    }
+  ]
+}

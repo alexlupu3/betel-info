@@ -1,0 +1,13 @@
+{
+  "logo": "/logo.jpg",
+  "title": "Biserica Betel Cluj",
+  "description": "Rămâi la curent cu programul și activitățile bisericii Betel",
+  "theme": {
+    "primaryColor": "#1d4ed8",
+    "primaryLightColor": "#dbeafe",
+    "primaryDarkColor": "#1e3a8a",
+    "accentColor": "#f59e0b",
+    "accentLightColor": "#fef3c7",
+    "accentDarkColor": "#b45309"
+  }
+}
