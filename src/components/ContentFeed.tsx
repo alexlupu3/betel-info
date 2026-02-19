@@ -17,7 +17,7 @@ export function ContentFeed({ feed }: Props) {
             return <RichText key={idx} item={item} />
           case 'card':
             return (
-              <div key={idx} className="w-full sm:max-w-[calc((100%-1rem)/2)] lg:max-w-[calc((100%-2rem)/3)]">
+              <div key={idx} className="w-full">
                 <Card item={item} horizontal />
               </div>
             )
