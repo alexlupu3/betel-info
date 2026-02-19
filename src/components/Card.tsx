@@ -2,6 +2,8 @@ import type { CardItem } from '../types'
 
 interface Props {
   item: CardItem
+  /** When true, switches to a horizontal layout (thumbnail left) on sm+ screens */
+  horizontal?: boolean
 }
 
 function formatDate(dateStr: string, timeStr?: string): string {
@@ -20,11 +22,11 @@ function formatDate(dateStr: string, timeStr?: string): string {
   return `${datePart} · ${timePart}`
 }
 
-export function Card({ item }: Props) {
+export function Card({ item, horizontal = false }: Props) {
   const inner = (
-    <div className="flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+    <div className={`flex overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md ${horizontal ? 'flex-col sm:flex-row' : 'flex-col'}`}>
       {item.thumbnail && (
-        <div className="aspect-video w-full overflow-hidden">
+        <div className={`overflow-hidden flex-shrink-0 ${horizontal ? 'aspect-video w-full sm:aspect-auto sm:w-56' : 'aspect-video w-full'}`}>
           <img
             src={item.thumbnail}
             alt={item.title}

@@ -18,7 +18,7 @@ export function ContentFeed({ feed }: Props) {
           case 'card':
             return (
               <div key={idx} className="w-full sm:max-w-[calc((100%-1rem)/2)] lg:max-w-[calc((100%-2rem)/3)]">
-                <Card item={item} />
+                <Card item={item} horizontal />
               </div>
             )
           case 'poster':
