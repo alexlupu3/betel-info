@@ -1,0 +1,13 @@
+{
+  "logo": "/locations/betel-manastur/logo.jpg",
+  "title": "Betel Mănăștur",
+  "description": "Rămâi la curent cu programul și activitățile Betel Mănăștur",
+  "theme": {
+    "primaryColor": "#16a34a",
+    "primaryLightColor": "#dcfce7",
+    "primaryDarkColor": "#14532d",
+    "accentColor": "#f59e0b",
+    "accentLightColor": "#fef3c7",
+    "accentDarkColor": "#b45309"
+  }
+}

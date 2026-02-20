@@ -1,0 +1,13 @@
+{
+  "logo": "/locations/betel-centru/logo.jpg",
+  "title": "Betel Centru",
+  "description": "Rămâi la curent cu programul și activitățile Betel Centru",
+  "theme": {
+    "primaryColor": "#7c3aed",
+    "primaryLightColor": "#ede9fe",
+    "primaryDarkColor": "#4c1d95",
+    "accentColor": "#f59e0b",
+    "accentLightColor": "#fef3c7",
+    "accentDarkColor": "#b45309"
+  }
+}

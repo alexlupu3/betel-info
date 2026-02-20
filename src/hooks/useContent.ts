@@ -3,6 +3,17 @@ import type { PageConfig, ContentFeed } from '../types'
 
 const BASE_URL = import.meta.env.VITE_CONTENT_BASE_URL ?? ''
 
+const VALID_LOCATIONS = ['betel-manastur', 'betel-centru', 'betel-vest', 'betel-est'] as const
+type Location = typeof VALID_LOCATIONS[number]
+
+function getLocation(): Location | null {
+  const param = new URLSearchParams(window.location.search).get('location')
+  if (param && (VALID_LOCATIONS as readonly string[]).includes(param)) {
+    return param as Location
+  }
+  return null
+}
+
 function injectTheme(theme: PageConfig['theme']) {
   const root = document.documentElement
   root.style.setProperty('--color-brand', theme.primaryColor)
@@ -64,8 +75,12 @@ export function useContent() {
   useEffect(() => {
     async function load() {
       try {
+        const location = getLocation()
+        const pageJsonUrl = location
+          ? `${BASE_URL}/locations/${location}/page.json`
+          : `${BASE_URL}/page.json`
         const [pageRes, contentRes] = await Promise.all([
-          fetch(`${BASE_URL}/page.json`),
+          fetch(pageJsonUrl),
           fetch(`${BASE_URL}/content.json`),
         ])
 

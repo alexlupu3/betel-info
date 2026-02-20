@@ -1,0 +1,13 @@
+{
+  "logo": "/locations/betel-est/logo.jpg",
+  "title": "Betel Est",
+  "description": "Rămâi la curent cu programul și activitățile Betel Est",
+  "theme": {
+    "primaryColor": "#dc2626",
+    "primaryLightColor": "#fee2e2",
+    "primaryDarkColor": "#7f1d1d",
+    "accentColor": "#f59e0b",
+    "accentLightColor": "#fef3c7",
+    "accentDarkColor": "#b45309"
+  }
+}

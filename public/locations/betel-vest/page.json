@@ -1,0 +1,13 @@
+{
+  "logo": "/locations/betel-vest/logo.jpg",
+  "title": "Betel Vest",
+  "description": "Rămâi la curent cu programul și activitățile Betel Vest",
+  "theme": {
+    "primaryColor": "#ea580c",
+    "primaryLightColor": "#ffedd5",
+    "primaryDarkColor": "#7c2d12",
+    "accentColor": "#f59e0b",
+    "accentLightColor": "#fef3c7",
+    "accentDarkColor": "#b45309"
+  }
+}
