@@ -1,14 +1,18 @@
 import type { GroupItem } from '../types'
 import { Card } from './Card'
 import { Poster } from './Poster'
+import { isVisible } from '../utils/locationFilter'
 
 interface Props {
   item: GroupItem
 }
 
 export function Group({ item }: Props) {
-  const hasPosters = item.items.some(i => i.type === 'poster')
-  const hasCards = item.items.some(i => i.type === 'card')
+  const visibleItems = item.items.filter(isVisible)
+  if (visibleItems.length === 0) return null
+
+  const hasPosters = visibleItems.some(i => i.type === 'poster')
+  const hasCards = visibleItems.some(i => i.type === 'card')
 
   // Mixed groups: posters scroll horizontally, cards in a responsive grid
   // Homogeneous groups: optimal grid for the single type
@@ -24,7 +28,7 @@ export function Group({ item }: Props) {
         {item.title}
       </h2>
       <div className={gridClass}>
-        {item.items.map((child, idx) =>
+        {visibleItems.map((child, idx) =>
           child.type === 'card'
             ? <Card key={idx} item={child} />
             : <Poster key={idx} item={child} />

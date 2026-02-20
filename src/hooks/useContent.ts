@@ -6,7 +6,7 @@ const BASE_URL = import.meta.env.VITE_CONTENT_BASE_URL ?? ''
 const VALID_LOCATIONS = ['betel-manastur', 'betel-centru', 'betel-vest', 'betel-est'] as const
 type Location = typeof VALID_LOCATIONS[number]
 
-function getLocation(): Location | null {
+export function getLocation(): Location | null {
   const param = new URLSearchParams(window.location.search).get('location')
   if (param && (VALID_LOCATIONS as readonly string[]).includes(param)) {
     return param as Location

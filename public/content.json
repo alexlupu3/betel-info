@@ -10,7 +10,8 @@
           "thumbnail": "https://images.zaap.ai/public/92f64fce0dfd7a68a3ac4bcf498e871491fe62e4fc1086647649.webp",
           "description": "Mijlocim pentru evenimentul ”Liber”, din 1 martie.",
           "link": "https://docs.google.com/spreadsheets/d/1KLCkY-QOIeJg3qycr5Ffe7rPcT9BED2ID-s1bc8dLEk/edit?usp=sharing",
-          "cta": "Mă înscriu"
+          "cta": "Mă înscriu",
+          "locations": ["betel-manastur"]
         },
         {
           "type": "card",
@@ -19,7 +20,8 @@
           "description": "Cină cu familiile din Betel Centru",
           "date": "2026-02-25",
           "link": "https://forms.gle/oQ3pcXm9eqR3gysn6",
-          "cta": "Mă înscriu"
+          "cta": "Mă înscriu",
+          "locations": ["betel-centru"]
         }
       ]
     },
@@ -91,7 +93,8 @@
           "thumbnail": "https://images.zaap.ai/public/c06ea2c3e9666833130b4ea24d99b1cb8c51184e1e5fdd1acf46.webp",
           "description": "Ne reluăm activitatea",
           "link": "https://docs.google.com/forms/d/e/1FAIpQLScfCZS8z2Zc2GhmmeOMiPhywmkyHuU7Oc2tcDaMRRWzE0cNJA/viewform",
-          "cta": "Înscriere"
+          "cta": "Înscriere",
+          "locations": ["betel-manastur"]
         },
         {
           "type": "card",

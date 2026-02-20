@@ -29,10 +29,14 @@ export interface PageConfig {
 // Content items (content.json)
 // ---------------------------------------------------------------------------
 
+/** Location slugs this item should appear on. Null/empty = visible everywhere. */
+type LocationFilter = string[] | null | undefined
+
 export interface RichTextItem {
   type: 'richtext'
   /** Markdown string */
   content: string
+  locations?: LocationFilter
 }
 
 export interface CardItem {
@@ -48,6 +52,7 @@ export interface CardItem {
   link?: string
   /** Custom CTA label. Defaults to "Află mai multe" when link is set. */
   linkText?: string
+  locations?: LocationFilter
 }
 
 export interface PosterItem {
@@ -56,12 +61,14 @@ export interface PosterItem {
   image: string
   title: string
   link?: string
+  locations?: LocationFilter
 }
 
 export interface GroupItem {
   type: 'group'
   title: string
   items: Array<CardItem | PosterItem>
+  locations?: LocationFilter
 }
 
 export type ContentItem = RichTextItem | CardItem | PosterItem | GroupItem

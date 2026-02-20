@@ -3,6 +3,7 @@ import { RichText } from './RichText'
 import { Card } from './Card'
 import { Poster } from './Poster'
 import { Group } from './Group'
+import { isVisible } from '../utils/locationFilter'
 
 interface Props {
   feed: ContentFeedType
@@ -11,7 +12,7 @@ interface Props {
 export function ContentFeed({ feed }: Props) {
   return (
     <main className="w-full max-w-3xl mx-auto px-4 pb-16 flex flex-col gap-8">
-      {feed.items.map((item, idx) => {
+      {feed.items.filter(isVisible).map((item, idx) => {
         switch (item.type) {
           case 'richtext':
             return <RichText key={idx} item={item} />
