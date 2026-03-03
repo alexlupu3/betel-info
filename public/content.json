@@ -44,7 +44,6 @@
         {
           "type": "card",
           "title": "Doresc mai multe informații",
-          "thumbnail": "https://images.zaap.ai/public/a3df648e1b5d82f7e50a40c941d49ea6ad1b1dbef8269d58f965.png",
           "description": "Biserica Betel răspunde cu drag nevoilor tale!",
           "link": "https://forms.gle/6aSBQmwt4Eaxgo4U7",
           "cta": "Spre formular"
@@ -52,7 +51,6 @@
         {
           "type": "card",
           "title": "Doresc să slujesc",
-          "thumbnail": "https://images.zaap.ai/public/a3df648e1b5d82f7e50a40c941d49ea6ad1b1dbef8269d58f965.png",
           "description": "Pune în valoare darul pe care Dumnezeu l-a așezat în tine",
           "link": "https://forms.gle/DVEdQBcT6HmomSbc9",
           "cta": "Spre formular"
@@ -60,7 +58,6 @@
         {
           "type": "card",
           "title": "Grupuri de casă",
-          "thumbnail": "https://images.zaap.ai/public/a3df648e1b5d82f7e50a40c941d49ea6ad1b1dbef8269d58f965.png",
           "description": "Te invităm să fii parte a unui grup de casă!",
           "link": "https://forms.gle/YJc8ykow915RqT5CA",
           "cta": "Înscrie-te"
@@ -155,7 +152,6 @@
     {
       "type": "card",
       "title": "Donează",
-      "thumbnail": "https://images.zaap.ai/public/a3df648e1b5d82f7e50a40c941d49ea6ad1b1dbef8269d58f965.png",
       "description": "Dăruiește acolo unde ești îndemnat",
       "link": "https://www.bisericabetel.com/#donate",
       "cta": "Donează"
