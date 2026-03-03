@@ -3,11 +3,11 @@
   "title": "Betel Centru",
   "description": "Rămâi la curent cu programul și activitățile Betel Centru",
   "theme": {
-    "primaryColor": "#7c3aed",
-    "primaryLightColor": "#ede9fe",
-    "primaryDarkColor": "#4c1d95",
-    "accentColor": "#f59e0b",
-    "accentLightColor": "#fef3c7",
-    "accentDarkColor": "#b45309"
+    "primaryColor": "#0f0f0f",
+    "primaryLightColor": "#f2f2f2",
+    "primaryDarkColor": "#000000",
+    "accentColor": "#ff6200",
+    "accentLightColor": "#fff0e6",
+    "accentDarkColor": "#cc4e00"
   }
 }

@@ -24,7 +24,7 @@ export function Group({ item }: Props) {
 
   return (
     <section className="w-full">
-      <h2 className="mb-4 text-lg font-bold text-gray-800 border-l-4 border-brand pl-3">
+      <h2 className="mb-4 text-xs font-semibold text-gray-500 uppercase tracking-widest border-l-2 border-accent pl-3">
         {item.title}
       </h2>
       <div className={gridClass}>

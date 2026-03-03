@@ -4,6 +4,9 @@ export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Franie', 'Arial', 'sans-serif'],
+      },
       colors: {
         // Brand colors driven by CSS custom properties injected at runtime
         // from page.json. Usage: bg-brand, text-brand, etc.
