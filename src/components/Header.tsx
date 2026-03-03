@@ -1,10 +1,26 @@
+import { useState } from 'react'
 import type { PageConfig } from '../types'
+import { getLocation } from '../hooks/useContent'
+
+const LOCATIONS = [
+  { slug: 'betel-centru',   label: 'Centru' },
+  { slug: 'betel-manastur', label: 'Mănăștur' },
+  { slug: 'betel-vest',     label: 'Vest' },
+  { slug: 'betel-est',      label: 'Est' },
+]
 
 interface Props {
   config: PageConfig
 }
 
 export function Header({ config }: Props) {
+  const location = getLocation()
+  const [showLocations, setShowLocations] = useState(false)
+
+  function clearLocation() {
+    window.location.href = window.location.pathname
+  }
+
   // Signature mixed-type composition:
   // - "Betel Centru"   → BETEL (bold) + CENTRU (condensed italic accent)
   // - "Biserica Betel" → BISERICA (bold) + BETEL (condensed italic accent)
@@ -54,7 +70,37 @@ export function Header({ config }: Props) {
       {config.description && (
         <p className="max-w-sm text-sm text-gray-500 leading-relaxed">{config.description}</p>
       )}
-
+      {location && (
+        <button
+          onClick={clearLocation}
+          className="text-xs font-medium text-gray-950 border border-gray-950/40 rounded-full px-4 py-1.5 hover:bg-gray-950/5 transition-colors"
+        >
+          Vezi tot
+        </button>
+      )}
+      {!location && (
+        <div className="flex flex-col items-center gap-3">
+          <button
+            onClick={() => setShowLocations(v => !v)}
+            className="text-xs font-medium text-gray-950 border border-gray-950/40 rounded-full px-4 py-1.5 hover:bg-gray-950/5 transition-colors"
+          >
+            Locații
+          </button>
+          {showLocations && (
+            <div className="flex flex-wrap justify-center gap-2">
+              {LOCATIONS.map(loc => (
+                <a
+                  key={loc.slug}
+                  href={`?location=${loc.slug}`}
+                  className="text-xs text-gray-500 border border-gray-200 rounded-full px-3 py-1 hover:text-gray-950 hover:border-gray-950/40 transition-colors"
+                >
+                  {loc.label}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </header>
   )
 }
