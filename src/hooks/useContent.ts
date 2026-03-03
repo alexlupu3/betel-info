@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import type { PageConfig, ContentFeed } from '../types'
+import type { PageConfig, ContentFeed, ContentItem } from '../types'
 
 const BASE_URL = import.meta.env.VITE_CONTENT_BASE_URL ?? ''
 
@@ -65,6 +65,29 @@ function darken(hex: string, amount = 0.25): string {
 
 // ---------------------------------------------------------------------------
 
+function isPastDate(date: string): boolean {
+  const today = new Date().toISOString().slice(0, 10)
+  return date < today
+}
+
+function filterExpiredItems(feed: ContentFeed): ContentFeed {
+  const filtered = feed.items.flatMap((item): ContentItem[] => {
+    if (item.type === 'card') {
+      return item.date && isPastDate(item.date) ? [] : [item]
+    }
+    if (item.type === 'group') {
+      const items = item.items.filter(
+        child => !(child.type === 'card' && child.date && isPastDate(child.date))
+      )
+      return [{ ...item, items }]
+    }
+    return [item]
+  })
+  return { items: filtered }
+}
+
+// ---------------------------------------------------------------------------
+
 export type LoadState = 'loading' | 'ready' | 'error'
 
 export function useContent() {
@@ -95,7 +118,7 @@ export function useContent() {
         document.title = page.title
 
         setPageConfig(page)
-        setContentFeed(content)
+        setContentFeed(filterExpiredItems(content))
         setState('ready')
       } catch (err) {
         console.error('[betel-info] content load error:', err)
