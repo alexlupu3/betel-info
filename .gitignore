@@ -1,7 +1,24 @@
-node_modules
-dist
-.claude
-dist-ssr
+# Web app
+apps/web/node_modules/
+apps/web/dist/
+apps/web/dist-ssr/
+apps/web/*.local
+
+# Admin app
+apps/admin/vendor/
+apps/admin/.env
+apps/admin/.env.backup
+apps/admin/storage/logs/
+apps/admin/storage/framework/cache/
+apps/admin/storage/framework/sessions/
+apps/admin/storage/framework/views/
+apps/admin/bootstrap/cache/
+apps/admin/database/database.sqlite
+apps/admin/public/hot
+apps/admin/public/storage
+
+# Root
+.claude/
 *.local
 .env
 .env.*
