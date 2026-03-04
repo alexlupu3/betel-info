@@ -40,7 +40,7 @@ export default defineConfig({
         runtimeCaching: [
           {
             // JSON content files: stale-while-revalidate so offline still works
-            urlPattern: /\/(page|content)\.json(\?.*)?$/,
+            urlPattern: /\/(page-config|content)(\/[^?]*)?(\\?.*)?$/,
             handler: 'StaleWhileRevalidate',
             options: {
               cacheName: 'content-json',

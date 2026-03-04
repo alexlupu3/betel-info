@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { PageConfig, ContentFeed, ContentItem } from '../types'
 
-const BASE_URL = import.meta.env.VITE_CONTENT_BASE_URL ?? ''
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? ''
 
 export function getLocation(): string | null {
@@ -59,27 +58,6 @@ function darken(hex: string, amount = 0.25): string {
 
 // ---------------------------------------------------------------------------
 
-function isPastDate(date: string): boolean {
-  const today = new Date().toISOString().slice(0, 10)
-  return date < today
-}
-
-function filterExpiredItems(feed: ContentFeed): ContentFeed {
-  const filtered = feed.items.flatMap((item): ContentItem[] => {
-    if (item.type === 'card') {
-      return item.date && isPastDate(item.date) ? [] : [item]
-    }
-    if (item.type === 'group') {
-      const items = item.items.filter(
-        child => !(child.type === 'card' && child.date && isPastDate(child.date))
-      )
-      return [{ ...item, items }]
-    }
-    return [item]
-  })
-  return { items: filtered }
-}
-
 // ---------------------------------------------------------------------------
 
 export type LoadState = 'loading' | 'ready' | 'error'
@@ -96,9 +74,12 @@ export function useContent() {
         const pageConfigUrl = location
           ? `${API_BASE_URL}/api/page-config/${location}`
           : `${API_BASE_URL}/api/page-config`
+        const contentUrl = location
+          ? `${API_BASE_URL}/api/content/${location}`
+          : `${API_BASE_URL}/api/content`
         const [pageRes, contentRes] = await Promise.all([
           fetch(pageConfigUrl),
-          fetch(`${BASE_URL}/content.json`),
+          fetch(contentUrl),
         ])
 
         if (!pageRes.ok || !contentRes.ok) throw new Error('Failed to fetch content')
@@ -112,7 +93,7 @@ export function useContent() {
         document.title = page.title
 
         setPageConfig(page)
-        setContentFeed(filterExpiredItems(content))
+        setContentFeed(content)
         setState('ready')
       } catch (err) {
         console.error('[betel-info] content load error:', err)

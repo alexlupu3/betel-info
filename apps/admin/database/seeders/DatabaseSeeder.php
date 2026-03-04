@@ -105,5 +105,8 @@ class DatabaseSeeder extends Seeder
                 'role'     => 'admin',
             ]
         );
+
+        // 3. Seed content items from content.json
+        $this->call(ContentItemSeeder::class);
     }
 }
