@@ -2,16 +2,10 @@ import { useEffect, useState } from 'react'
 import type { PageConfig, ContentFeed, ContentItem } from '../types'
 
 const BASE_URL = import.meta.env.VITE_CONTENT_BASE_URL ?? ''
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? ''
 
-const VALID_LOCATIONS = ['betel-manastur', 'betel-centru', 'betel-vest', 'betel-est'] as const
-type Location = typeof VALID_LOCATIONS[number]
-
-export function getLocation(): Location | null {
-  const param = new URLSearchParams(window.location.search).get('location')
-  if (param && (VALID_LOCATIONS as readonly string[]).includes(param)) {
-    return param as Location
-  }
-  return null
+export function getLocation(): string | null {
+  return new URLSearchParams(window.location.search).get('location')
 }
 
 function injectTheme(theme: PageConfig['theme']) {
@@ -99,11 +93,11 @@ export function useContent() {
     async function load() {
       try {
         const location = getLocation()
-        const pageJsonUrl = location
-          ? `${BASE_URL}/locations/${location}/page.json`
-          : `${BASE_URL}/page.json`
+        const pageConfigUrl = location
+          ? `${API_BASE_URL}/api/page-config/${location}`
+          : `${API_BASE_URL}/api/page-config`
         const [pageRes, contentRes] = await Promise.all([
-          fetch(pageJsonUrl),
+          fetch(pageConfigUrl),
           fetch(`${BASE_URL}/content.json`),
         ])
 

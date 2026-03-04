@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Location;
-use App\Models\PageConfig;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -12,66 +11,83 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. Seed four locations
+        // 1. Seed locations (all fields from page.json baked in)
         $locationData = [
-            ['slug' => 'betel-centru',   'name' => 'Betel Centru'],
-            ['slug' => 'betel-manastur', 'name' => 'Betel Mănăștur'],
-            ['slug' => 'betel-vest',     'name' => 'Betel Vest'],
-            ['slug' => 'betel-est',      'name' => 'Betel Est'],
+            [
+                'slug'                => 'betel-global',
+                'title'               => 'Biserica Betel',
+                'description'         => 'Rămâi la curent cu programul și activitățile bisericii Betel',
+                'logo_path'           => '/logo.jpg',
+                'primary_color'       => '#0f0f0f',
+                'primary_light_color' => '#f2f2f2',
+                'primary_dark_color'  => '#000000',
+                'accent_color'        => '#0f0f0f',
+                'accent_light_color'  => '#f2f2f2',
+                'accent_dark_color'   => '#000000',
+                'is_default'          => true,
+            ],
+            [
+                'slug'                => 'betel-centru',
+                'title'               => 'Betel Centru',
+                'description'         => 'Rămâi la curent cu programul și activitățile Betel Centru',
+                'logo_path'           => '/locations/betel-centru/logo.jpg',
+                'primary_color'       => '#0f0f0f',
+                'primary_light_color' => '#f2f2f2',
+                'primary_dark_color'  => '#000000',
+                'accent_color'        => '#ff6200',
+                'accent_light_color'  => '#fff0e6',
+                'accent_dark_color'   => '#cc4e00',
+                'is_default'          => false,
+            ],
+            [
+                'slug'                => 'betel-manastur',
+                'title'               => 'Betel Mănăștur',
+                'description'         => 'Rămâi la curent cu programul și activitățile Betel Mănăștur',
+                'logo_path'           => '/locations/betel-manastur/logo.jpg',
+                'primary_color'       => '#0f0f0f',
+                'primary_light_color' => '#f2f2f2',
+                'primary_dark_color'  => '#000000',
+                'accent_color'        => '#17d3c3',
+                'accent_light_color'  => '#e6faf9',
+                'accent_dark_color'   => '#0fa89b',
+                'is_default'          => false,
+            ],
+            [
+                'slug'                => 'betel-vest',
+                'title'               => 'Betel Vest',
+                'description'         => 'Rămâi la curent cu programul și activitățile Betel Vest',
+                'logo_path'           => '/locations/betel-vest/logo.jpg',
+                'primary_color'       => '#0f0f0f',
+                'primary_light_color' => '#f2f2f2',
+                'primary_dark_color'  => '#000000',
+                'accent_color'        => '#a0384b',
+                'accent_light_color'  => '#f5e6e9',
+                'accent_dark_color'   => '#7a2a39',
+                'is_default'          => false,
+            ],
+            [
+                'slug'                => 'betel-est',
+                'title'               => 'Betel Est',
+                'description'         => 'Rămâi la curent cu programul și activitățile Betel Est',
+                'logo_path'           => '/locations/betel-est/logo.jpg',
+                'primary_color'       => '#0f0f0f',
+                'primary_light_color' => '#f2f2f2',
+                'primary_dark_color'  => '#000000',
+                'accent_color'        => '#ffd000',
+                'accent_light_color'  => '#fffbe6',
+                'accent_dark_color'   => '#ccaa00',
+                'is_default'          => false,
+            ],
         ];
 
-        $locations = [];
         foreach ($locationData as $data) {
-            $locations[$data['slug']] = Location::updateOrCreate(
+            Location::updateOrCreate(
                 ['slug' => $data['slug']],
-                ['name' => $data['name'], 'logo_path' => "/locations/{$data['slug']}/logo.jpg"]
+                $data
             );
         }
 
-        // 2. Seed global page_config from apps/web/public/page.json
-        $webPublicPath = base_path('../../apps/web/public');
-        $globalJson = json_decode(file_get_contents("{$webPublicPath}/page.json"), true);
-
-        PageConfig::updateOrCreate(
-            ['location_id' => null],
-            [
-                'title'               => $globalJson['title'],
-                'description'         => $globalJson['description'],
-                'logo_path'           => $globalJson['logo'] ?? null,
-                'primary_color'       => $globalJson['theme']['primaryColor'],
-                'primary_light_color' => $globalJson['theme']['primaryLightColor'] ?? null,
-                'primary_dark_color'  => $globalJson['theme']['primaryDarkColor'] ?? null,
-                'accent_color'        => $globalJson['theme']['accentColor'] ?? null,
-                'accent_light_color'  => $globalJson['theme']['accentLightColor'] ?? null,
-                'accent_dark_color'   => $globalJson['theme']['accentDarkColor'] ?? null,
-            ]
-        );
-
-        // 3. Seed per-location page_configs
-        foreach (array_keys($locations) as $slug) {
-            $jsonPath = "{$webPublicPath}/locations/{$slug}/page.json";
-            if (! file_exists($jsonPath)) {
-                continue;
-            }
-            $json = json_decode(file_get_contents($jsonPath), true);
-
-            PageConfig::updateOrCreate(
-                ['location_id' => $locations[$slug]->id],
-                [
-                    'title'               => $json['title'],
-                    'description'         => $json['description'],
-                    'logo_path'           => $json['logo'] ?? null,
-                    'primary_color'       => $json['theme']['primaryColor'],
-                    'primary_light_color' => $json['theme']['primaryLightColor'] ?? null,
-                    'primary_dark_color'  => $json['theme']['primaryDarkColor'] ?? null,
-                    'accent_color'        => $json['theme']['accentColor'] ?? null,
-                    'accent_light_color'  => $json['theme']['accentLightColor'] ?? null,
-                    'accent_dark_color'   => $json['theme']['accentDarkColor'] ?? null,
-                ]
-            );
-        }
-
-        // 4. Seed admin user from environment — both vars must be set explicitly
+        // 2. Seed admin user from environment — both vars must be set explicitly
         $adminEmail    = env('DB_ADMIN_EMAIL');
         $adminPassword = env('DB_ADMIN_PASSWORD');
 
