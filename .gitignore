@@ -19,6 +19,7 @@ apps/admin/public/storage
 
 # Root
 .claude/
+.agents/
 .vite/
 *.local
 .env
